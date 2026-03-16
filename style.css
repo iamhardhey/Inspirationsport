@@ -6,7 +6,7 @@
   font-family:'Roboto',sans-serif;
 }
 
-html,body{
+html, body{
   width:100%;
   overflow-x:hidden;
 }
@@ -37,6 +37,7 @@ header{
   overflow:hidden;
 }
 
+/* Overlay */
 header .overlay{
   position:absolute;
   top:0;
@@ -200,44 +201,45 @@ section h2{
   color:#007BFF;
 }
 
-/* About */
-#about{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  gap:60px;
-  background:#fff;
-  border-radius:20px;
-  padding:60px;
-  margin:40px;
+/* About Section */
+#about {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
 }
 
-#about img{
-  flex:1;
-  max-width:400px;
-  border-radius:15px;
+#about img {
+  flex: 1 1 300px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0;
 }
 
-#about .text{
-  flex:2;
+#about .text {
+  flex: 1 1 300px;
+  min-width: 250px;
 }
 
-#about .text h3{
-  font-size:2.5rem;
-  margin-bottom:20px;
-  color:#007BFF;
+#about .text h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #007BFF;
 }
 
-#about .text p{
-  margin-bottom:15px;
+#about .text p {
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
-/* Services */
+/* Services Section */
 #services{
   background:#f8f9fa;
   border-radius:20px;
   padding:80px 40px;
-  margin:40px;
+  margin:40px 20px;
 }
 
 .service-cards{
@@ -274,7 +276,7 @@ section h2{
   margin-bottom:15px;
 }
 
-/* Gallery */
+/* Gallery Section */
 #gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -282,7 +284,7 @@ section h2{
   padding:60px 20px;
   background:#fff;
   border-radius:20px;
-  margin:40px;
+  margin:40px 20px;
 }
 
 #gallery img{
@@ -292,15 +294,22 @@ section h2{
   border-radius:15px;
 }
 
+/* Connect / CTA Section */
 #connect {
   position: relative;
   background: url('cta-placeholder.jpg') center/cover no-repeat;
   color: #fff;
 }
+
 #connect .overlay {
-  position: absolute; top:0; left:0; width:100%; height:100%;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.6);
 }
+
 #connect .content {
   position: relative;
   max-width: 600px;
@@ -308,23 +317,59 @@ section h2{
   text-align: center;
   padding: 60px 20px;
 }
-#connect h2 {margin-bottom:15px; color:#007BFF;}
-#connect p {margin-bottom:20px; font-size:1.1rem;}
-#connect .contact-info p {margin:8px 0; font-size:1rem;}
-#connect .contact-info .icon {margin-right:10px; color:#007BFF; font-size:1.2rem;}
-#connect a {color:#fff; transition:0.3s;}
-#connect a:hover {color:#007BFF; text-decoration:underline;}
 
-/* Form styling */
-#connect input, #connect textarea, #connect button {
-  padding:12px; margin:10px 0; width:100%; border-radius:5px; border:none; font-size:1rem;
+#connect h2 {
+  margin-bottom:15px;
+  color:#007BFF;
 }
-#connect button {
-  background:#007BFF; color:#fff; font-size:1.2rem; cursor:pointer;
+
+#connect p {
+  margin-bottom:20px;
+  font-size:1.1rem;
+}
+
+#connect .contact-info p {
+  margin:8px 0;
+  font-size:1rem;
+}
+
+#connect .contact-info .icon {
+  margin-right:10px;
+  color:#007BFF;
+  font-size:1.2rem;
+}
+
+#connect a {
+  color:#fff;
   transition:0.3s;
 }
-#connect button:hover {background:#0056b3;}
 
+#connect a:hover {
+  color:#007BFF;
+  text-decoration:underline;
+}
+
+/* Connect form styling */
+#connect input, #connect textarea, #connect button {
+  padding:12px;
+  margin:10px 0;
+  width:100%;
+  border-radius:5px;
+  border:none;
+  font-size:1rem;
+}
+
+#connect button {
+  background:#007BFF;
+  color:#fff;
+  font-size:1.2rem;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+#connect button:hover {
+  background:#0056b3;
+}
 
 /* Footer */
 footer {
@@ -343,15 +388,15 @@ footer .footer-logo {
   display: block;
 }
 
-
 footer .social-icons a{
   margin:0 10px;
   font-size:1.8rem;
 }
 
-/* Mobile */
-@media(max-width:768px){
+/* Mobile responsiveness */
+@media (max-width: 768px) {
 
+  /* Header */
   header h1{
     font-size:2.5rem;
   }
@@ -360,15 +405,30 @@ footer .social-icons a{
     font-size:1.3rem;
   }
 
+  /* About section */
   #about{
     flex-direction:column;
     text-align:center;
   }
 
+  #about img, #about .text{
+    flex:unset;
+    max-width:90%;
+  }
+
+  #about .text h3{
+    font-size:1.8rem;
+  }
+
+  #about .text p{
+    font-size:0.95rem;
+  }
+
+  /* Navigation */
   .nav-links{
     display:none;
     flex-direction:column;
-    background:#000;
+    background:rgba(0,0,0,0.9);
     position:absolute;
     top:70px;
     left:50%;
@@ -386,5 +446,8 @@ footer .social-icons a{
     display:block;
   }
 
+  /* Connect section padding */
+  #connect .content{
+    padding:40px 20px;
+  }
 }
-
