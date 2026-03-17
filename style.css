@@ -1,4 +1,4 @@
-/* Reset */
+/* ================= RESET ================= */
 *{
   margin:0;
   padding:0;
@@ -6,7 +6,7 @@
   font-family:'Roboto',sans-serif;
 }
 
-html, body{
+html,body{
   width:100%;
   overflow-x:hidden;
 }
@@ -14,105 +14,87 @@ html, body{
 body{
   line-height:1.6;
   color:#333;
-  background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);
-  min-height:100vh;
+  background:linear-gradient(135deg,#f5f7fa,#c3cfe2);
 }
 
+/* ================= GLOBAL ================= */
 a{
   text-decoration:none;
   color:inherit;
-  transition:color .3s ease;
 }
 
 img{
   max-width:100%;
-  height:auto;
   display:block;
 }
 
-/* Header */
+/* ================= HEADER ================= */
 header{
   position:relative;
   height:100vh;
   overflow:hidden;
 }
 
-/* Overlay */
-header .overlay{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(135deg,rgba(0,123,255,.8) 0%,rgba(0,0,0,.6) 100%);
-  z-index:1;
-}
-
-/* Hero slideshow */
 .hero-slides{
   position:absolute;
-  top:0;
-  left:0;
   width:100%;
   height:100%;
   z-index:0;
-  overflow:hidden;
 }
 
 .hero-slides img{
+  position:absolute;
   width:100%;
   height:100%;
   object-fit:cover;
-  position:absolute;
-  top:0;
-  left:0;
   opacity:0;
-  transition:opacity 1.5s ease-in-out;
+  transition:1.5s;
 }
 
 .hero-slides img.active{
   opacity:1;
 }
 
-/* Logo */
+header .overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,rgba(0,123,255,.8),rgba(0,0,0,.6));
+  z-index:1;
+}
+
 header .logo{
   position:absolute;
   top:20px;
   left:20px;
-  width:100px;
-  z-index:3;
+  width:110px;
+  z-index:10;
 }
 
-header .logo img{
-  width:100%;
-}
-
-/* Navigation */
 nav{
   position:absolute;
   top:25px;
   right:20px;
-  z-index:3;
+  z-index:8;
 }
 
 .nav-links{
-  list-style:none;
   display:flex;
-  gap:30px;
+  gap:25px;
+  list-style:none;
   background:rgba(255,255,255,.1);
   backdrop-filter:blur(10px);
-  padding:15px 25px;
+  padding:12px 20px;
   border-radius:50px;
 }
 
-.nav-links li a{
+.nav-links a{
   color:#fff;
   font-weight:600;
-  font-size:1.1rem;
   position:relative;
 }
 
-.nav-links li a::after{
+.nav-links a::after{
   content:'';
   position:absolute;
   bottom:-5px;
@@ -120,10 +102,10 @@ nav{
   width:0;
   height:2px;
   background:#fff;
-  transition:width .3s ease;
+  transition:.3s;
 }
 
-.nav-links li a:hover::after{
+.nav-links a:hover::after{
   width:100%;
 }
 
@@ -134,32 +116,16 @@ nav{
   cursor:pointer;
 }
 
-/* Hero Content */
 header .content{
   position:absolute;
   top:50%;
   left:50%;
   transform:translate(-50%,-50%);
-  color:#fff;
   text-align:center;
-  z-index:3;
+  color:#fff;
+  z-index:5;
   max-width:800px;
   padding:0 20px;
-}
-
-header .content h1,
-header .content p,
-header .content button{
-  opacity:0;
-  transform:translateY(30px);
-  transition:opacity 1s ease,transform 1s ease;
-}
-
-header .content.show h1,
-header .content.show p,
-header .content.show button{
-  opacity:1;
-  transform:translateY(0);
 }
 
 header h1{
@@ -168,18 +134,17 @@ header h1{
 }
 
 header p{
-  font-size:1.8rem;
-  margin-bottom:40px;
+  font-size:1.6rem;
+  margin-bottom:30px;
 }
 
 header button{
-  padding:18px 40px;
-  font-size:1.2rem;
+  padding:15px 35px;
+  border:none;
   background:#007BFF;
   color:#fff;
-  border:none;
-  cursor:pointer;
   border-radius:50px;
+  cursor:pointer;
   transition:.3s;
 }
 
@@ -187,7 +152,7 @@ header button:hover{
   background:#0056b3;
 }
 
-/* Sections */
+/* ================= SECTIONS ================= */
 section{
   padding:80px 20px;
   max-width:1200px;
@@ -196,244 +161,215 @@ section{
 
 section h2{
   text-align:center;
-  margin-bottom:60px;
-  font-size:3rem;
+  font-size:2.5rem;
+  margin-bottom:40px;
   color:#007BFF;
 }
 
-/* About Section */
-#about {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  justify-content: center;
+/* ================= ABOUT ================= */
+#about{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:40px;
+  justify-content:center;
 }
 
-#about img {
-  flex: 1 1 300px;
-  max-width: 400px;
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 0;
+#about img{
+  flex:1 1 300px;
+  max-width:400px;
+  border-radius:10px;
 }
 
-#about .text {
-  flex: 1 1 300px;
-  min-width: 250px;
+#about .text{
+  flex:1 1 300px;
 }
 
-#about .text h3 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #007BFF;
-}
-
-#about .text p {
-  margin-bottom: 10px;
-  font-size: 1rem;
-}
-
-/* Services Section */
+/* ================= SERVICES ================= */
 #services{
   background:#f8f9fa;
   border-radius:20px;
-  padding:80px 40px;
+  padding:60px 30px;
   margin:40px 20px;
 }
 
 .service-cards{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
 }
 
 .service-card{
   background:#fff;
-  padding:30px;
+  padding:25px;
   border-radius:15px;
   text-align:center;
   transition:.4s;
-  opacity:0;
-  transform:translateY(30px);
-}
-
-.service-card.show{
-  opacity:1;
-  transform:translateY(0);
 }
 
 .service-card img{
   width:100%;
-  height:180px;
+  height:320px; /* increased image size */
   object-fit:cover;
   border-radius:10px;
-  margin-bottom:20px;
-}
-
-.service-card h4{
-  color:#007BFF;
   margin-bottom:15px;
 }
 
-/* Gallery Section */
+.service-card h3{
+  color:#007BFF;
+  margin-bottom:10px;
+}
+
+/* ================= GALLERY ================= */
 #gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  padding:60px 20px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
   background:#fff;
+  padding:40px 20px;
   border-radius:20px;
   margin:40px 20px;
 }
 
 #gallery img{
-  width:100%;
   height:200px;
   object-fit:cover;
-  border-radius:15px;
+  border-radius:10px;
 }
 
-/* Connect / CTA Section */
-#connect {
-  position: relative;
-  background: url('cta-placeholder.jpg') center/cover no-repeat;
-  color: #fff;
+/* ================= CONNECT ================= */
+#connect{
+  position:relative;
+  background:url('cta-placeholder.jpg') center/cover no-repeat;
+  color:#fff;
+  padding:60px 20px;
+  overflow:hidden; /* prevents it overflowing into footer */
 }
 
-#connect .overlay {
-  position: absolute;
-  top:0;
-  left:0;
+#connect .overlay{
+  position:absolute;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.7);
 }
 
-#connect .content {
-  position: relative;
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px 20px;
+/* GRID LAYOUT */
+#connect .content{
+  position:relative;
+  z-index:2;
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
 }
 
-#connect h2 {
-  margin-bottom:15px;
-  color:#007BFF;
+/* TEXT SIDE */
+#connect h2{
+  font-size:2.5rem;
+  margin-bottom:10px;
 }
 
-#connect p {
+#connect p{
   margin-bottom:20px;
-  font-size:1.1rem;
 }
 
-#connect .contact-info p {
-  margin:8px 0;
-  font-size:1rem;
+.contact-info p{
+  margin:10px 0;
 }
 
-#connect .contact-info .icon {
+.contact-info .icon{
   margin-right:10px;
   color:#007BFF;
-  font-size:1.2rem;
 }
 
-#connect a {
-  color:#fff;
-  transition:0.3s;
+/* FORM */
+#connect form{
+  display:flex;
+  flex-direction:column;
 }
 
-#connect a:hover {
-  color:#007BFF;
-  text-decoration:underline;
-}
-
-/* Connect form styling */
-#connect input, #connect textarea, #connect button {
+#connect input,
+#connect textarea{
   padding:12px;
-  margin:10px 0;
-  width:100%;
-  border-radius:5px;
+  margin-bottom:15px;
   border:none;
+  border-radius:6px;
   font-size:1rem;
 }
 
-#connect button {
+#connect button{
+  padding:14px;
   background:#007BFF;
   color:#fff;
-  font-size:1.2rem;
+  border:none;
+  border-radius:6px;
   cursor:pointer;
-  transition:0.3s;
+  transition:.3s;
 }
 
-#connect button:hover {
+#connect button:hover{
   background:#0056b3;
 }
 
-/* Footer */
-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-  color: #fff;
-  padding: 60px 20px;
+/* ================= FOOTER ================= */
+footer{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  background:#2c3e50;
+  color:#fff;
+  padding:40px 20px;
 }
 
-footer .footer-logo {
-  width: 120px;
-  margin: 0 auto 20px auto;
-  display: block;
+footer img{
+  width:100px;
+  margin:0 auto 15px auto;
 }
 
-footer .social-icons a{
-  margin:0 10px;
-  font-size:1.8rem;
-}
+/* ================= RESPONSIVE ================= */
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-
-  /* Header */
+/* Tablet */
+@media (max-width:992px){
   header h1{
-    font-size:2.5rem;
+    font-size:3rem;
+  }
+
+  .service-card img{
+    height:280px;
+  }
+}
+
+/* Mobile */
+@media (max-width:768px){
+  header{
+    height:90vh;
+  }
+
+  header h1{
+    font-size:2.2rem;
   }
 
   header p{
-    font-size:1.3rem;
+    font-size:1.1rem;
   }
 
-  /* About section */
-  #about{
-    flex-direction:column;
-    text-align:center;
+  header .logo{
+    width:80px;
   }
 
-  #about img, #about .text{
-    flex:unset;
-    max-width:90%;
-  }
-
-  #about .text h3{
-    font-size:1.8rem;
-  }
-
-  #about .text p{
-    font-size:0.95rem;
-  }
-
-  /* Navigation */
+  /* NAV */
   .nav-links{
     display:none;
     flex-direction:column;
-    background:rgba(0,0,0,0.9);
     position:absolute;
     top:70px;
     left:50%;
     transform:translateX(-50%);
     width:90%;
+    background:rgba(0,0,0,.95);
     padding:20px;
     border-radius:10px;
   }
@@ -446,8 +382,37 @@ footer .social-icons a{
     display:block;
   }
 
-  /* Connect section padding */
+  #about{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  /* CONNECT STACK */
   #connect .content{
-    padding:40px 20px;
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  section{
+    padding:50px 15px;
+  }
+}
+
+/* Small phones */
+@media (max-width:480px){
+  header h1{
+    font-size:1.8rem;
+  }
+
+  header p{
+    font-size:1rem;
+  }
+
+  #gallery{
+    grid-template-columns:1fr;
+  }
+
+  .service-card img{
+    height:250px;
   }
 }
